@@ -110,7 +110,7 @@ cybersec_agent/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-```text
+```
 
 ## 8. Planification du projet
 
