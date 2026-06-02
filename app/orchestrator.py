@@ -1,4 +1,5 @@
 from agents.general_agent import general_response
+from agents.vpn_agent import vpn_response
 from agents.best_practices_agent import best_practices_response
 from agents.phishing_agent import phishing_response
 from agents.network_agent import network_response
@@ -34,6 +35,15 @@ def generate_response(user_question, conversation_history=None):
 
     if any(keyword in question for keyword in network_keywords):
         return network_response()
+    
+        # Agent VPN
+    vpn_keywords = [
+        "vpn", "réseau privé virtuel", "tunnel sécurisé",
+        "connexion sécurisée", "ressources internes"
+    ]
+
+    if any(keyword in question for keyword in vpn_keywords):
+        return vpn_response()
 
     # 4. Agent UPHF
     uphf_keywords = [
