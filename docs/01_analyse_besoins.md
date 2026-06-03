@@ -123,13 +123,13 @@ L’application reposera sur :
 - une base de connaissances cybersécurité ;
 - une mémoire conversationnelle ;
 - un filtre de sécurité ;
-- une couche d’intelligence artificielle basée sur Hugging Face ;
+- une couche d’intelligence artificielle locale basée sur Ollama/Mistral ;
 - une exécution via Docker ;
 - un dépôt GitHub pour le travail collaboratif.
 
 L’objectif est de construire d’abord une version minimale stable, puis d’ajouter progressivement des fonctionnalités plus avancées.
 
-La première version reposera sur des réponses contrôlées à partir d’une base de connaissances afin de garantir la fiabilité du chatbot. Ensuite, Hugging Face pourra être intégré pour reformuler ou enrichir les réponses et rendre la conversation plus naturelle.
+La première version reposera sur des réponses contrôlées à partir d’une base de connaissances afin de garantir la fiabilité du chatbot. Ensuite, Ollama avec le modèle Mistral pourra être intégré pour reformuler ou enrichir les réponses et rendre la conversation plus naturelle.
 
 ---
 
@@ -166,7 +166,7 @@ La version principale du projet devra contenir les fonctionnalités suivantes :
 - réponses pédagogiques sur la cybersécurité ;
 - filtrage des demandes offensives ou dangereuses ;
 - base de connaissances modifiable ;
-- intégration possible de Hugging Face ;
+- intégration d’une couche IA locale avec Ollama/Mistral ;
 - exécution avec Docker.
 
 ### 3.3 Architecture initiale envisagée
@@ -186,7 +186,7 @@ L’architecture initiale sera organisée autour des composants suivants :
 | Agent sécurité | Refuse les demandes offensives ou dangereuses |
 | Base de connaissances | Stocke les réponses et informations de référence |
 | Mémoire conversationnelle | Conserve le contexte des échanges |
-| Hugging Face | Reformule ou enrichit les réponses générées par les agents |
+| Ollama/Mistral | Reformule ou enrichit les réponses générées par les agents à l’aide d’un modèle IA local |
 | Docker | Permet de lancer l’application dans un environnement contrôlé |
 
 ### 3.4 Principe de fonctionnement
@@ -199,23 +199,26 @@ Le fonctionnement général sera le suivant :
 4. le système vérifie si la demande est dangereuse ;
 5. l’orchestrateur sélectionne l’agent adapté ;
 6. l’agent récupère une réponse dans la base de connaissances ;
-7. Hugging Face peut reformuler ou enrichir la réponse ;
+7. Ollama/Mistral peut reformuler ou enrichir la réponse ;
 8. la réponse finale est affichée à l’utilisateur ;
 9. l’échange est ajouté à l’historique de conversation.
 
-### 3.5 Justification de l’utilisation de Hugging Face
+### 3.5 Justification de l’utilisation de Ollama/Mistral
 
-Hugging Face est envisagé comme couche d’intelligence artificielle du projet.
+Ollama/Mistral est envisagé comme couche d’intelligence artificielle du projet.
 
-Cependant, il ne remplacera pas toute l’architecture du chatbot. Les agents spécialisés et la base de connaissances resteront au cœur du fonctionnement afin de conserver des réponses contrôlées et fiables.
+Cependant, cette couche IA ne remplace pas toute l’architecture du chatbot. Les agents spécialisés et la base de connaissances restent au cœur du fonctionnement afin de conserver des réponses contrôlées et fiables.
 
-Hugging Face sera utilisé pour :
+Ollama permet d’exécuter localement un modèle d’intelligence artificielle. Le modèle Mistral est utilisé pour reformuler les réponses générées par les agents afin de les rendre plus naturelles et plus pédagogiques.
+
+Ollama/Mistral sera utilisé pour :
 
 - reformuler les réponses ;
 - rendre les explications plus naturelles ;
 - améliorer le ton pédagogique ;
 - enrichir légèrement les réponses sans sortir du cadre défensif ;
-- montrer l’intégration d’une brique IA dans le projet.
+- montrer l’intégration d’une brique IA locale dans le projet ;
+- éviter de dépendre d’une API payante.
 
 Cette approche permet de respecter l’objectif d’un chatbot agentique tout en ajoutant une dimension IA.
 
@@ -243,7 +246,7 @@ Si le temps le permet, les fonctionnalités suivantes pourront être ajoutées :
 - recherche dans des documents ;
 - amélioration graphique de l’interface ;
 - enrichissement de la base de connaissances ;
-- ajout d’un modèle Hugging Face plus avancé.
+- amélioration du prompt utilisé par Ollama/Mistral.
 
 ---
 
@@ -264,7 +267,7 @@ Le projet sera réalisé progressivement afin d’éviter de développer une sol
 | Étape 7 | Développement des agents spécialisés |
 | Étape 8 | Mise en place de la base de connaissances |
 | Étape 9 | Ajout de la mémoire conversationnelle |
-| Étape 10 | Intégration de Hugging Face |
+| Étape 10 | Intégration de Ollama/Mistral |
 | Étape 11 | Tests fonctionnels, tests de sécurité et tests Docker |
 | Étape 12 | Préparation de la démonstration et de la soutenance |
 
@@ -296,7 +299,7 @@ Les outils envisagés sont :
 | Markdown | Rédaction des rapports |
 | Streamlit | Interface web du chatbot |
 | Python | Développement de la logique applicative |
-| Hugging Face | Couche IA pour reformulation des réponses |
+| Ollama/Mistral | Couche IA locale pour reformulation des réponses |
 | Docker | Conteneurisation de l’application |
 | Pytest | Tests automatisés |
 | Discord / Teams / WhatsApp | Communication rapide entre membres |
@@ -312,7 +315,7 @@ Les objectifs spécifiques doivent être précis, réalistes et mesurables.
 | Répondre à plusieurs thèmes cybersécurité | Le chatbot répond sur phishing, mots de passe, Wi-Fi, VPN et bonnes pratiques |
 | Gérer le multi-tours | Le chatbot peut prendre en compte un thème précédent |
 | Ajouter un filtre de sécurité | Les demandes offensives sont refusées |
-| Intégrer Hugging Face | Une réponse peut être reformulée ou enrichie par une brique IA |
+| Intégrer Ollama/Mistral | Une réponse peut être reformulée ou enrichie par une brique IA locale |
 | Dockeriser l’application | L’application se lance avec Docker |
 | Tester le fonctionnement | Des scénarios de tests sont documentés |
 | Préparer une démonstration | Un parcours de démonstration est prêt pour la soutenance |
@@ -325,7 +328,7 @@ Les objectifs spécifiques doivent être précis, réalistes et mesurables.
 | Mauvaise répartition des tâches | Travail désorganisé | Moyen | Définir clairement les rôles dès le début |
 | Conflits Git | Perte de temps ou écrasement de fichiers | Moyen | Faire des pulls réguliers et éviter de modifier les mêmes fichiers |
 | Modèle IA trop lourd | Lenteur ou impossibilité d’exécution sur certaines machines | Élevé | Prévoir une réponse JSON de secours et tester un modèle léger |
-| Utilisation d’une IA locale impossible | Problème de performance machine | Élevé | Utiliser Hugging Face avec un modèle léger ou une solution cloud si nécessaire |
+| Ollama non disponible sur une machine | La reformulation IA ne fonctionne pas | Élevé | Prévoir une réponse contrôlée de secours issue du JSON |
 | Solution IA payante | Dépassement des contraintes du projet | Moyen | Privilégier les outils gratuits ou open source |
 | Réponses IA incorrectes | Mauvaise information donnée à l’utilisateur | Élevé | Garder une base de connaissances contrôlée et limiter le rôle de l’IA à la reformulation |
 | Réponses dangereuses | Risque éthique et non-respect du cadre défensif | Élevé | Ajouter un agent de sécurité et filtrer les demandes offensives |
@@ -338,22 +341,23 @@ Les objectifs spécifiques doivent être précis, réalistes et mesurables.
 
 L’intégration d’une intelligence artificielle peut poser plusieurs problèmes.
 
-Un modèle IA local peut être trop lourd pour certaines machines, ce qui peut entraîner de la lenteur ou empêcher l’exécution correcte de l’application. Une IA en ligne ou cloud peut aussi poser des questions de coût, de disponibilité ou de dépendance à une connexion Internet.
+Un modèle IA local peut être trop lourd pour certaines machines, ce qui peut entraîner de la lenteur ou empêcher l’exécution correcte de l’application. L’utilisation d’une IA en ligne ou cloud peut aussi poser des questions de coût, de disponibilité ou de dépendance à une connexion Internet.
 
 Pour limiter ce risque, la solution retenue sera hybride :
 
 - la base de connaissances JSON fournira une réponse fiable de secours ;
-- Hugging Face sera utilisé comme couche complémentaire ;
-- si Hugging Face n’est pas disponible, le chatbot pourra quand même fonctionner ;
+- Ollama/Mistral sera utilisé comme couche complémentaire ;
+- si Ollama n’est pas disponible, le chatbot pourra quand même fonctionner avec les réponses contrôlées ;
 - le rôle de l’IA sera limité à la reformulation ou à l’enrichissement contrôlé des réponses ;
-- les réponses dangereuses seront filtrées avant toute génération.
+- les réponses dangereuses seront filtrées avant toute génération ;
+- le modèle utilisé devra rester suffisamment léger pour fonctionner sur une machine classique.
 
-Cette stratégie permet d’obtenir un chatbot stable tout en intégrant une vraie composante IA.
+Cette stratégie permet d’obtenir un chatbot stable tout en intégrant une vraie composante IA locale.
 
 ### 4.7 Conclusion de l’analyse
 
-L’analyse du cahier des charges montre que le projet ne consiste pas seulement à créer un simple chatbot. Il s’agit de développer une application complète combinant une interface utilisateur, une architecture agentique, une base de connaissances, une mémoire conversationnelle, une couche IA et un système de filtrage de sécurité.
+L’analyse du cahier des charges montre que le projet ne consiste pas seulement à créer un simple chatbot. Il s’agit de développer une application complète combinant une interface utilisateur, une architecture agentique, une base de connaissances, une mémoire conversationnelle, une couche IA locale et un système de filtrage de sécurité.
 
-La priorité sera de construire une version minimale stable et démontrable, puis d’ajouter progressivement les améliorations comme Hugging Face, la mémoire multi-tours avancée, Docker et les tests.
+La priorité sera de construire une version minimale stable et démontrable, puis d’ajouter progressivement les améliorations comme Ollama/Mistral, la mémoire multi-tours avancée, Docker et les tests.
 
 Cette organisation permet de répondre aux exigences du projet tout en limitant les risques techniques liés au temps, aux performances machine et à l’intégration de l’intelligence artificielle.
