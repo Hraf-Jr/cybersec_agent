@@ -5,9 +5,8 @@ from agents.network_agent import network_response
 from agents.uphf_agent import uphf_response
 from agents.security_agent import security_response, is_dangerous_question
 from agents.vpn_agent import vpn_response
-
 from memory.conversation_memory import detect_topic, get_last_topic, is_follow_up_question
-
+from llm.ollama_client import improve_response_with_ollama
 
 def response_by_topic(topic):
     """
@@ -68,6 +67,13 @@ def follow_up_response_by_topic(topic, question):
 
     return general_response()
 
+def final_response(user_question, base_response):
+    """
+    Améliore la réponse avec Ollama/Mistral.
+    """
+
+    return improve_response_with_ollama(user_question, base_response)
+
 
 def generate_response(user_question, conversation_history=None):
     """
@@ -85,13 +91,16 @@ def generate_response(user_question, conversation_history=None):
         last_topic = get_last_topic(conversation_history)
 
         if last_topic:
-            return follow_up_response_by_topic(last_topic, question)
+            base_response = follow_up_response_by_topic(last_topic, question)
+            return final_response(user_question, base_response)
 
     # 3. Détection directe du thème
     current_topic = detect_topic(question)
 
     if current_topic:
-        return response_by_topic(current_topic)
+        base_response = response_by_topic(current_topic)
+        return final_response(user_question, base_response)
 
     # 4. Réponse générale par défaut
-    return general_response()
+    base_response = general_response()
+    return final_response(user_question, base_response)
