@@ -1,10 +1,72 @@
 from agents.general_agent import general_response
-from agents.vpn_agent import vpn_response
 from agents.best_practices_agent import best_practices_response
 from agents.phishing_agent import phishing_response
 from agents.network_agent import network_response
 from agents.uphf_agent import uphf_response
 from agents.security_agent import security_response, is_dangerous_question
+from agents.vpn_agent import vpn_response
+
+from memory.conversation_memory import detect_topic, get_last_topic, is_follow_up_question
+
+
+def response_by_topic(topic):
+    """
+    Retourne la réponse correspondant à un thème détecté.
+    """
+
+    if topic == "phishing":
+        return phishing_response()
+
+    if topic == "wifi":
+        return network_response()
+
+    if topic == "vpn":
+        return vpn_response()
+
+    if topic == "best_practices":
+        return best_practices_response()
+
+    if topic == "uphf":
+        return uphf_response()
+
+    return general_response()
+
+
+def follow_up_response_by_topic(topic, question):
+    """
+    Retourne une réponse adaptée lorsqu'il s'agit d'une question de suivi.
+    """
+
+    question = question.lower()
+
+    if topic == "phishing":
+        if "cliqué" in question or "clique" in question:
+            return (
+                "Si vous avez déjà cliqué sur un lien suspect, il faut éviter de saisir vos identifiants. "
+                "Si vous les avez déjà saisis, changez immédiatement votre mot de passe, activez la double authentification "
+                "et signalez le message au service informatique ou à l’organisme concerné."
+            )
+        return phishing_response()
+
+    if topic == "vpn":
+        if "installer" in question or "installation" in question:
+            return (
+                "Pour installer un VPN, il faut d’abord utiliser le service recommandé par votre établissement ou votre organisation. "
+                "En général, les étapes sont les suivantes : télécharger le client VPN officiel, l’installer, se connecter avec ses identifiants, "
+                "puis choisir le profil ou le serveur adapté. Dans un contexte universitaire, il faut suivre la documentation officielle de l’établissement."
+            )
+        return vpn_response()
+
+    if topic == "wifi":
+        return network_response()
+
+    if topic == "best_practices":
+        return best_practices_response()
+
+    if topic == "uphf":
+        return uphf_response()
+
+    return general_response()
 
 
 def generate_response(user_question, conversation_history=None):
@@ -18,51 +80,18 @@ def generate_response(user_question, conversation_history=None):
     if is_dangerous_question(question):
         return security_response()
 
-    # 2. Agent phishing
-    phishing_keywords = [
-        "phishing", "hameçonnage", "mail suspect", "email suspect",
-        "lien suspect", "arnaque", "pièce jointe", "expéditeur"
-    ]
+    # 2. Gestion du multi-tours en priorité si la question ressemble à une question de suivi
+    if is_follow_up_question(question):
+        last_topic = get_last_topic(conversation_history)
 
-    if any(keyword in question for keyword in phishing_keywords):
-        return phishing_response()
+        if last_topic:
+            return follow_up_response_by_topic(last_topic, question)
 
-    # 3. Agent réseau / Wi-Fi
-    network_keywords = [
-        "wifi", "wi-fi", "réseau", "box", "routeur",
-        "wpa", "wps", "connexion", "internet"
-    ]
+    # 3. Détection directe du thème
+    current_topic = detect_topic(question)
 
-    if any(keyword in question for keyword in network_keywords):
-        return network_response()
-    
-        # Agent VPN
-    vpn_keywords = [
-        "vpn", "réseau privé virtuel", "tunnel sécurisé",
-        "connexion sécurisée", "ressources internes"
-    ]
+    if current_topic:
+        return response_by_topic(current_topic)
 
-    if any(keyword in question for keyword in vpn_keywords):
-        return vpn_response()
-
-    # 4. Agent UPHF
-    uphf_keywords = [
-        "uphf", "université", "vpn universitaire", "mfa",
-        "double authentification", "ent", "compte universitaire"
-    ]
-
-    if any(keyword in question for keyword in uphf_keywords):
-        return uphf_response()
-
-    # 5. Agent bonnes pratiques
-    best_practices_keywords = [
-        "mot de passe", "password", "2fa", "authentification",
-        "sécuriser", "protéger", "sauvegarde", "mise à jour",
-        "bonnes pratiques", "compte"
-    ]
-
-    if any(keyword in question for keyword in best_practices_keywords):
-        return best_practices_response()
-
-    # 6. Réponse générale par défaut
+    # 4. Réponse générale par défaut
     return general_response()

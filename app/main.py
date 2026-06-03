@@ -36,7 +36,8 @@ if user_question:
     with st.chat_message("user"):
         st.write(user_question)
 
-    response = generate_response(user_question, st.session_state.messages)
+    conversation_before_question = st.session_state.messages[:-1]
+    response = generate_response(user_question, conversation_before_question)
 
     st.session_state.messages.append({
         "role": "assistant",
