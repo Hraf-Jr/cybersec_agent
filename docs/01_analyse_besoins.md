@@ -30,10 +30,10 @@ Le projet est réalisé par une équipe de cinq étudiants. Afin d’organiser e
 | Membre | Rôle principal | Missions associées |
 |---|---|---|
 | Achraf | Coordination / Git / documentation | Organisation du dépôt Git, suivi de l’avancement, rédaction des rapports, intégration des contributions |
-| Membre 2 | Interface utilisateur | Développement de l’interface web, ergonomie, affichage de la conversation |
-| Membre 3 | Orchestrateur et logique agentique | Mise en place du routage des questions vers les agents spécialisés |
-| Membre 4 | Agents cybersécurité et base de connaissances | Création des agents, rédaction des contenus cybersécurité, structuration des réponses |
-| Membre 5 | Tests, Docker et déploiement | Tests fonctionnels, tests de sécurité, préparation du Docker et de la démonstration |
+| Anis | Interface utilisateur | Développement de l’interface web, ergonomie, affichage de la conversation |
+| Saad | Orchestrateur et logique agentique | Mise en place du routage des questions vers les agents spécialisés |
+| Adnane | Agents cybersécurité et base de connaissances | Création des agents, rédaction des contenus cybersécurité, structuration des réponses |
+| Othmane | Tests, Docker et déploiement | Tests fonctionnels, tests de sécurité, préparation du Docker et de la démonstration |
 
 Cette répartition pourra évoluer au cours du projet selon les difficultés rencontrées et l’avancement de chaque partie.
 
