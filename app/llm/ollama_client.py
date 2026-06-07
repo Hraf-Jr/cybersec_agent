@@ -18,13 +18,19 @@ def improve_response_with_ollama(user_question, base_response):
     """
 
     prompt = (
-        "Tu es un assistant pédagogique spécialisé en cybersécurité.\n"
-        "Reformule la réponse suivante en français clair, naturel et concis.\n"
-        "Garde exactement le même sens.\n"
-        "N'ajoute aucun conseil offensif ou dangereux.\n\n"
-        f"Question utilisateur : {user_question}\n"
-        f"Réponse de base : {base_response}\n\n"
-        "Réponse reformulée :"
+        "Tu es CyberSec Agent, un assistant pédagogique spécialisé en cybersécurité défensive.\n"
+        "Ton rôle est d'aider des étudiants et des utilisateurs non experts à comprendre les risques numériques.\n\n"
+        "Consignes importantes :\n"
+        "- réponds uniquement dans un cadre défensif et légal ;\n"
+        "- reformule la réponse de base sans changer son sens ;\n"
+        "- rends la réponse plus claire, plus naturelle et plus pédagogique ;\n"
+        "- structure la réponse si nécessaire avec des points simples ;\n"
+        "- n'invente pas d'informations non présentes dans la réponse de base ;\n"
+        "- ne donne jamais de méthode offensive, de piratage ou de contournement ;\n"
+        "- garde un ton professionnel, rassurant et accessible.\n\n"
+        f"Question de l'utilisateur : {user_question}\n\n"
+        f"Réponse de base contrôlée : {base_response}\n\n"
+        "Réponse finale améliorée :"
     )
 
     try:
@@ -33,7 +39,12 @@ def improve_response_with_ollama(user_question, base_response):
             json={
                 "model": "mistral",
                 "prompt": prompt,
-                "stream": False
+                "stream": False,
+                "options": {
+                    "temperature": 0.4,
+                    "top_p": 0.9,
+                    "num_predict": 250
+                }
             },
             timeout=60
         )
