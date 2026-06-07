@@ -1,0 +1,8 @@
+services:
+  cybersec-agent:
+    build: .
+    container_name: cybersec-agent
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434/api/generate

@@ -1,5 +1,15 @@
 import requests
 
+import os
+import requests
+
+
+OLLAMA_URL = os.getenv(
+    "OLLAMA_URL",
+    "http://localhost:11434/api/generate"
+)
+
+
 
 def improve_response_with_ollama(user_question, base_response):
     """
@@ -19,7 +29,7 @@ def improve_response_with_ollama(user_question, base_response):
 
     try:
         response = requests.post(
-            "http://localhost:11434/api/generate",
+            OLLAMA_URL,
             json={
                 "model": "mistral",
                 "prompt": prompt,
