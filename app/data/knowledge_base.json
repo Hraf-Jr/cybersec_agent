@@ -1,30 +1,30 @@
 {
   "passwords": {
     "title": "Mots de passe",
-    "response": "Pour créer un bon mot de passe, il est recommandé d’utiliser une phrase longue, difficile à deviner et différente pour chaque compte. Il faut éviter les informations personnelles comme le prénom, la date de naissance ou le nom d’un proche. L’utilisation d’un gestionnaire de mots de passe est aussi conseillée, car il permet de stocker des mots de passe complexes sans avoir à les mémoriser. Il est également important d’activer la double authentification quand elle est disponible."
+    "response": "Pour créer un bon mot de passe, il est recommandé d’utiliser une phrase longue, unique et difficile à deviner. Un bon mot de passe doit éviter les informations personnelles comme le prénom, la date de naissance ou le nom d’un proche. Il est préférable d’utiliser un mot de passe différent pour chaque service afin d’éviter qu’une fuite sur un site compromette tous les comptes. L’utilisation d’un gestionnaire de mots de passe est fortement conseillée, car il permet de stocker des mots de passe complexes sans devoir les mémoriser. Il est également important d’activer la double authentification lorsque cette option est disponible."
   },
   "phishing": {
     "title": "Phishing",
-    "response": "Pour reconnaître une tentative de phishing, il faut vérifier l’adresse de l’expéditeur, les fautes d’orthographe, les liens suspects, les pièces jointes inattendues et les messages qui créent un sentiment d’urgence. En cas de doute, il ne faut pas cliquer sur le lien ni ouvrir la pièce jointe. Il vaut mieux contacter directement l’organisme concerné par un canal officiel."
+    "response": "Pour reconnaître une tentative de phishing, il faut vérifier plusieurs éléments : l’adresse exacte de l’expéditeur, la présence de fautes d’orthographe, les liens suspects, les pièces jointes inattendues et les messages qui créent un sentiment d’urgence. Un message qui demande un mot de passe, des informations bancaires ou une action immédiate doit être considéré avec prudence. En cas de doute, il ne faut pas cliquer sur le lien ni ouvrir la pièce jointe. Il est préférable de contacter directement l’organisme concerné par un canal officiel."
   },
   "wifi": {
     "title": "Sécurité Wi-Fi",
-    "response": "Pour sécuriser un réseau Wi-Fi, il est conseillé d’utiliser le chiffrement WPA2 ou WPA3, de choisir un mot de passe long, de désactiver le WPS, de changer le mot de passe par défaut de la box ou du routeur et de mettre à jour régulièrement l’équipement. Il est aussi préférable de créer un réseau invité pour les personnes extérieures."
+    "response": "Pour sécuriser un réseau Wi-Fi, il est conseillé d’utiliser le chiffrement WPA2 ou WPA3, de choisir un mot de passe long et difficile à deviner, de désactiver le WPS et de changer les identifiants par défaut de la box ou du routeur. Il est aussi important de mettre régulièrement à jour l’équipement réseau. Pour les invités, il est préférable de créer un réseau séparé afin d’éviter de donner accès au réseau principal."
   },
   "vpn": {
     "title": "VPN",
-    "response": "Un VPN permet de créer un tunnel sécurisé entre l’appareil de l’utilisateur et un réseau distant. Il peut être utile pour protéger une connexion sur un réseau public ou accéder à certaines ressources internes. Cependant, il ne remplace pas les autres bonnes pratiques comme les mots de passe forts, les mises à jour et la double authentification."
+    "response": "Un VPN permet de créer un tunnel sécurisé entre l’appareil de l’utilisateur et un réseau distant. Il peut être utile pour protéger une connexion sur un réseau public ou accéder à certaines ressources internes d’une organisation. Cependant, un VPN ne remplace pas les autres bonnes pratiques de sécurité. Il faut continuer à utiliser des mots de passe forts, activer la double authentification, faire les mises à jour et rester vigilant face aux liens suspects."
   },
   "best_practices": {
     "title": "Bonnes pratiques",
-    "response": "Les bonnes pratiques de cybersécurité consistent à utiliser des mots de passe forts, activer la double authentification, faire les mises à jour, sauvegarder régulièrement ses données, éviter les liens suspects, verrouiller sa session et ne jamais partager ses identifiants."
+    "response": "Les bonnes pratiques de cybersécurité consistent à adopter plusieurs réflexes simples : utiliser des mots de passe forts et uniques, activer la double authentification, faire régulièrement les mises à jour, sauvegarder ses données, éviter les liens et pièces jointes suspects, verrouiller sa session lorsqu’on quitte son poste et ne jamais partager ses identifiants. Ces gestes réduisent fortement les risques de compromission."
   },
   "uphf": {
     "title": "Contexte universitaire",
-    "response": "Dans un contexte universitaire comme l’UPHF, il est important de protéger son compte étudiant ou personnel, d’utiliser un mot de passe fort, d’activer la double authentification si elle est disponible et de rester vigilant face aux mails suspects. Pour certaines ressources internes, un VPN ou un service d’authentification sécurisé peut être utilisé selon les recommandations de l’université."
+    "response": "Dans un contexte universitaire comme l’UPHF, il est important de protéger son compte étudiant ou personnel, car il peut donner accès à des services sensibles comme la messagerie, l’ENT ou certaines ressources internes. Il faut utiliser un mot de passe fort, éviter de le réutiliser sur d’autres sites, activer la double authentification si elle est disponible et rester vigilant face aux mails suspects. Pour certaines ressources internes, un VPN ou un service d’accès sécurisé peut être nécessaire selon les recommandations de l’université."
   },
   "general": {
     "title": "Cybersécurité générale",
-    "response": "Je peux vous aider sur plusieurs sujets de cybersécurité : les mots de passe, le phishing, la sécurité Wi-Fi, les VPN, les sauvegardes, les mises à jour et les bonnes pratiques numériques. Posez-moi une question plus précise pour obtenir une réponse adaptée."
+    "response": "La cybersécurité regroupe les pratiques permettant de protéger les comptes, les appareils, les données et les réseaux contre les menaces numériques. Les risques les plus courants sont le phishing, les mots de passe faibles, les logiciels non mis à jour, les malwares et les connexions non sécurisées. Je peux vous aider sur plusieurs sujets : mots de passe, phishing, Wi-Fi, VPN, sauvegardes, mises à jour et bonnes pratiques numériques."
   }
 }
