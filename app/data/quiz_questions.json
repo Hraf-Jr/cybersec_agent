@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Quel est le bon réflexe face à un mail suspect ?",
+    "options": [
+      "Cliquer rapidement sur le lien",
+      "Vérifier l’expéditeur et ne pas cliquer en cas de doute",
+      "Répondre avec son mot de passe"
+    ],
+    "answer": "Vérifier l’expéditeur et ne pas cliquer en cas de doute",
+    "explanation": "Face à un mail suspect, il faut vérifier l’expéditeur, éviter de cliquer sur les liens et contacter l’organisme par un canal officiel."
+  },
+  {
+    "question": "Quelle pratique améliore la sécurité d’un compte ?",
+    "options": [
+      "Réutiliser le même mot de passe partout",
+      "Activer la double authentification",
+      "Partager son mot de passe avec un ami"
+    ],
+    "answer": "Activer la double authentification",
+    "explanation": "La double authentification ajoute une protection supplémentaire même si le mot de passe est compromis."
+  },
+  {
+    "question": "Quel chiffrement Wi-Fi est recommandé ?",
+    "options": [
+      "WEP",
+      "WPA2 ou WPA3",
+      "Aucun chiffrement"
+    ],
+    "answer": "WPA2 ou WPA3",
+    "explanation": "WPA2 et WPA3 sont des standards modernes de protection Wi-Fi. WEP est ancien et peu sûr."
+  },
+  {
+    "question": "À quoi sert principalement un VPN ?",
+    "options": [
+      "Créer une connexion sécurisée vers un réseau distant",
+      "Rendre un mot de passe inutile",
+      "Empêcher toutes les attaques automatiquement"
+    ],
+    "answer": "Créer une connexion sécurisée vers un réseau distant",
+    "explanation": "Un VPN crée un tunnel sécurisé, mais il ne remplace pas les autres bonnes pratiques comme les mots de passe forts ou les mises à jour."
+  }
+]

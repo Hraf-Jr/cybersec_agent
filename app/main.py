@@ -1,6 +1,6 @@
 import streamlit as st
 from orchestrator import generate_response
-
+from quiz import display_quiz
 
 st.set_page_config(
     page_title="CyberSec Agent",
@@ -285,6 +285,9 @@ with st.sidebar:
         - Docker + Pytest  
         """
     )
+
+    st.markdown("---")
+    display_quiz()
 
     st.markdown("---")
 
