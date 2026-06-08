@@ -1,8 +1,23 @@
 services:
   cybersec-agent:
-    build: .
+    image: hrafbouk/cybersec-agent:latest
     container_name: cybersec-agent
     ports:
       - "8501:8501"
     environment:
       - OLLAMA_URL=http://host.docker.internal:11434/api/generate
+      - MONGO_URL=mongodb://mongo:27017/
+      - MONGO_DB_NAME=cybersec_agent
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    container_name: cybersec-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - cybersec_mongo_data:/data/db
+
+volumes:
+  cybersec_mongo_data:

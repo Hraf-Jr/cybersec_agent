@@ -1,4 +1,7 @@
 import streamlit as st
+import uuid
+from database import save_conversation
+from memory.conversation_memory import detect_topic
 from orchestrator import generate_response
 from quiz import display_quiz
 
@@ -354,6 +357,9 @@ st.markdown(
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+if "user_id" not in st.session_state:
+    st.session_state.user_id = "user_" + uuid.uuid4().hex[:8]
+
 
 if len(st.session_state.messages) == 0:
     with st.chat_message("assistant"):
@@ -382,6 +388,14 @@ if user_question:
     with st.spinner("Analyse de la requête..."):
         conversation_before_question = st.session_state.messages[:-1]
         response = generate_response(user_question, conversation_before_question)
+    theme = detect_topic(user_question) or "follow_up"
+
+    save_conversation(
+        user_id=st.session_state.user_id,
+        question=user_question,
+        response=response,
+        theme=theme
+    )
 
     st.session_state.messages.append({
         "role": "assistant",
@@ -400,3 +414,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.markdown(f"**Session ID :** `{st.session_state.user_id}`")
