@@ -2,3 +2,4 @@ streamlit
 pytest
 requests
 pymongo
+ollama
