@@ -13,9 +13,6 @@ def is_dangerous_question(question):
         "cracker",
         "contourner",
         "attaquer un réseau",
-        "ddos",
-        "virus",
-        "malware",
         "keylogger",
         "exploiter une faille"
     ]

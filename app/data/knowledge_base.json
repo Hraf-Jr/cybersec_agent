@@ -1,30 +1,66 @@
 {
   "passwords": {
     "title": "Mots de passe",
-    "response": "Pour créer un bon mot de passe, il est recommandé d’utiliser une phrase longue, unique et difficile à deviner. Un bon mot de passe doit éviter les informations personnelles comme le prénom, la date de naissance ou le nom d’un proche. Il est préférable d’utiliser un mot de passe différent pour chaque service afin d’éviter qu’une fuite sur un site compromette tous les comptes. L’utilisation d’un gestionnaire de mots de passe est fortement conseillée, car il permet de stocker des mots de passe complexes sans devoir les mémoriser. Il est également important d’activer la double authentification lorsque cette option est disponible."
+    "response": "Un bon mot de passe doit être long, unique et difficile à deviner. Il est préférable d’utiliser une phrase de passe composée de plusieurs mots, plutôt qu’un mot court avec quelques caractères spéciaux. Il faut éviter les informations personnelles comme le prénom, la date de naissance ou le nom d’un proche. Chaque compte doit avoir un mot de passe différent, car si un site est piraté, les autres comptes restent protégés. L’utilisation d’un gestionnaire de mots de passe est recommandée pour créer et stocker des mots de passe complexes. Il est aussi conseillé d’activer la double authentification lorsque c’est possible."
   },
   "phishing": {
     "title": "Phishing",
-    "response": "Pour reconnaître une tentative de phishing, il faut vérifier plusieurs éléments : l’adresse exacte de l’expéditeur, la présence de fautes d’orthographe, les liens suspects, les pièces jointes inattendues et les messages qui créent un sentiment d’urgence. Un message qui demande un mot de passe, des informations bancaires ou une action immédiate doit être considéré avec prudence. En cas de doute, il ne faut pas cliquer sur le lien ni ouvrir la pièce jointe. Il est préférable de contacter directement l’organisme concerné par un canal officiel."
+    "response": "Le phishing est une technique d’arnaque qui consiste à faire croire à l’utilisateur qu’un message provient d’un organisme fiable. Pour reconnaître un mail de phishing, il faut vérifier l’adresse exacte de l’expéditeur, les fautes d’orthographe, les liens suspects, les pièces jointes inattendues et les messages qui créent un sentiment d’urgence. Il ne faut jamais saisir ses identifiants après avoir cliqué sur un lien reçu par mail. En cas de doute, il vaut mieux accéder au service directement depuis le site officiel ou contacter l’organisme par un canal connu."
   },
   "wifi": {
     "title": "Sécurité Wi-Fi",
-    "response": "Pour sécuriser un réseau Wi-Fi, il est conseillé d’utiliser le chiffrement WPA2 ou WPA3, de choisir un mot de passe long et difficile à deviner, de désactiver le WPS et de changer les identifiants par défaut de la box ou du routeur. Il est aussi important de mettre régulièrement à jour l’équipement réseau. Pour les invités, il est préférable de créer un réseau séparé afin d’éviter de donner accès au réseau principal."
+    "response": "Pour sécuriser une box Internet ou un réseau Wi-Fi, il faut changer le nom du réseau si nécessaire, utiliser un mot de passe Wi-Fi long et difficile à deviner, activer le chiffrement WPA2-AES ou WPA3 si disponible, et désactiver le WPS car il peut faciliter certaines attaques. Il est aussi important de changer le mot de passe d’administration de la box, de faire les mises à jour du routeur et de créer un réseau invité pour les personnes extérieures. Ces mesures réduisent les risques d’intrusion sur le réseau domestique."
   },
   "vpn": {
     "title": "VPN",
-    "response": "Un VPN permet de créer un tunnel sécurisé entre l’appareil de l’utilisateur et un réseau distant. Il peut être utile pour protéger une connexion sur un réseau public ou accéder à certaines ressources internes d’une organisation. Cependant, un VPN ne remplace pas les autres bonnes pratiques de sécurité. Il faut continuer à utiliser des mots de passe forts, activer la double authentification, faire les mises à jour et rester vigilant face aux liens suspects."
+    "response": "Un VPN permet de créer un tunnel sécurisé entre un appareil et un réseau distant. Il peut être utile pour protéger une connexion sur un réseau public ou accéder à des ressources internes d’une organisation. Pour l’utiliser correctement, il faut choisir une solution officielle ou recommandée, installer le client VPN, se connecter avec ses identifiants, puis choisir le profil ou le serveur adapté. Un VPN ne remplace pas les autres protections : il faut toujours utiliser des mots de passe forts, activer la double authentification et rester vigilant face aux liens suspects."
+  },
+  "uphf": {
+    "title": "Sécurité dans le contexte universitaire",
+    "response": "Dans un contexte universitaire comme l’UPHF, la sécurité repose sur la protection des comptes, des accès aux services numériques et des ressources internes. Les actions importantes peuvent inclure l’utilisation d’un VPN pour accéder à certains services, la double authentification, les campagnes de sensibilisation, la protection de l’ENT, la sécurisation des postes et la diffusion de bonnes pratiques. Par exemple, un VPN institutionnel comme eduVPN peut être utilisé lorsqu’il est recommandé par la Direction du Numérique pour sécuriser les connexions vers le réseau interne de l’université."
+  },
+  "malware": {
+    "title": "Malwares",
+    "response": "Un malware est un logiciel malveillant conçu pour nuire à un appareil, voler des données ou perturber un système. Il peut prendre plusieurs formes : virus, cheval de Troie, ransomware, spyware ou keylogger. Pour s’en protéger, il faut éviter les pièces jointes suspectes, télécharger les logiciels uniquement depuis des sources officielles, maintenir le système à jour, utiliser une protection antivirus et ne pas exécuter de fichiers inconnus. En cas de doute, il faut isoler l’appareil et demander de l’aide à un service informatique."
+  },
+  "ransomware": {
+    "title": "Ransomware",
+    "response": "Un ransomware est un logiciel malveillant qui bloque l’accès aux fichiers ou au système, puis demande une rançon. La meilleure protection consiste à faire des sauvegardes régulières, à ne pas ouvrir les pièces jointes suspectes, à maintenir les logiciels à jour et à limiter les droits administrateur. En cas d’infection, il faut déconnecter l’appareil du réseau, ne pas payer immédiatement la rançon, prévenir le service informatique et restaurer les données depuis une sauvegarde saine si possible."
+  },
+  "updates": {
+    "title": "Mises à jour",
+    "response": "Les mises à jour sont essentielles en cybersécurité car elles corrigent des failles qui peuvent être exploitées par des attaquants. Il faut mettre à jour le système d’exploitation, le navigateur, les applications, l’antivirus, la box Internet et les appareils connectés. Il est recommandé d’activer les mises à jour automatiques lorsque c’est possible. Reporter trop longtemps une mise à jour augmente le risque d’infection ou de compromission."
+  },
+  "backups": {
+    "title": "Sauvegardes",
+    "response": "Les sauvegardes permettent de récupérer ses données après une panne, une erreur humaine, un vol ou une attaque par ransomware. Une bonne stratégie consiste à appliquer la règle 3-2-1 : conserver trois copies des données, sur deux supports différents, dont une copie hors ligne ou à distance. Il faut aussi tester régulièrement les sauvegardes pour vérifier qu’elles sont réellement restaurables."
+  },
+  "two_factor": {
+    "title": "Double authentification",
+    "response": "La double authentification ajoute une deuxième protection en plus du mot de passe. Même si un mot de passe est volé, l’attaquant ne peut pas forcément accéder au compte sans le second facteur. Il peut s’agir d’une application d’authentification, d’une clé de sécurité ou d’un code temporaire. Les applications d’authentification et les clés physiques sont généralement plus sûres que les codes SMS."
+  },
+  "public_wifi": {
+    "title": "Wi-Fi public",
+    "response": "Un réseau Wi-Fi public peut être risqué car il est partagé avec des inconnus. Il faut éviter d’y saisir des informations sensibles, vérifier que les sites utilisent HTTPS, désactiver le partage de fichiers et utiliser un VPN si nécessaire. Il faut aussi éviter les réseaux au nom suspect qui imitent un lieu connu, car ils peuvent être créés pour piéger les utilisateurs."
+  },
+  "encrypted_messaging": {
+    "title": "Messagerie chiffrée",
+    "response": "Une messagerie chiffrée protège le contenu des échanges afin qu’il ne soit lisible que par les participants. Le chiffrement de bout en bout est particulièrement important car même le fournisseur du service ne peut pas lire les messages. Cependant, il faut aussi vérifier l’identité des contacts, protéger son téléphone par un code robuste et se méfier des liens ou fichiers reçus."
+  },
+  "social_engineering": {
+    "title": "Ingénierie sociale",
+    "response": "L’ingénierie sociale consiste à manipuler une personne pour obtenir une information ou lui faire réaliser une action risquée. L’attaquant peut se faire passer pour un collègue, un technicien, une banque ou une administration. Pour s’en protéger, il faut vérifier l’identité de l’interlocuteur, ne pas communiquer d’identifiants, prendre le temps de réfléchir et signaler les demandes suspectes."
+  },
+  "smartphone": {
+    "title": "Sécurité smartphone",
+    "response": "Pour sécuriser un smartphone, il faut utiliser un code de verrouillage robuste, activer les mises à jour automatiques, installer les applications depuis les magasins officiels, vérifier les permissions demandées, activer la localisation en cas de perte et éviter les réseaux Wi-Fi publics non fiables. Il est aussi conseillé d’activer la sauvegarde des données importantes."
   },
   "best_practices": {
     "title": "Bonnes pratiques",
-    "response": "Les bonnes pratiques de cybersécurité consistent à adopter plusieurs réflexes simples : utiliser des mots de passe forts et uniques, activer la double authentification, faire régulièrement les mises à jour, sauvegarder ses données, éviter les liens et pièces jointes suspects, verrouiller sa session lorsqu’on quitte son poste et ne jamais partager ses identifiants. Ces gestes réduisent fortement les risques de compromission."
-  },
-  "uphf": {
-    "title": "Contexte universitaire",
-    "response": "Dans un contexte universitaire comme l’UPHF, il est important de protéger son compte étudiant ou personnel, car il peut donner accès à des services sensibles comme la messagerie, l’ENT ou certaines ressources internes. Il faut utiliser un mot de passe fort, éviter de le réutiliser sur d’autres sites, activer la double authentification si elle est disponible et rester vigilant face aux mails suspects. Pour certaines ressources internes, un VPN ou un service d’accès sécurisé peut être nécessaire selon les recommandations de l’université."
+    "response": "Les bonnes pratiques de cybersécurité reposent sur plusieurs réflexes simples : utiliser des mots de passe forts et uniques, activer la double authentification, faire les mises à jour, sauvegarder régulièrement ses données, éviter les liens suspects, vérifier les expéditeurs, verrouiller sa session et ne jamais partager ses identifiants. Ces gestes réduisent fortement les risques numériques."
   },
   "general": {
     "title": "Cybersécurité générale",
-    "response": "La cybersécurité regroupe les pratiques permettant de protéger les comptes, les appareils, les données et les réseaux contre les menaces numériques. Les risques les plus courants sont le phishing, les mots de passe faibles, les logiciels non mis à jour, les malwares et les connexions non sécurisées. Je peux vous aider sur plusieurs sujets : mots de passe, phishing, Wi-Fi, VPN, sauvegardes, mises à jour et bonnes pratiques numériques."
+    "response": "La cybersécurité regroupe les pratiques qui protègent les comptes, les appareils, les données et les réseaux contre les menaces numériques. Les risques les plus courants sont le phishing, les mots de passe faibles, les malwares, les logiciels non mis à jour, les réseaux Wi-Fi mal sécurisés et les pertes de données. Je peux aider sur les mots de passe, le phishing, le Wi-Fi, les VPN, les sauvegardes, les mises à jour, les malwares et les bonnes pratiques numériques."
   }
 }
